@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/aceleradora-TW/Interacao-For-While/tree/main#readme",
   "dependencies": {
+    "readline-sync": "^1.4.10",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   },
