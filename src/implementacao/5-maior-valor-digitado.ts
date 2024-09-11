@@ -1,31 +1,17 @@
-import { parse } from "path";
+const readline = require("readline-sync")
 
 function mostrarMaiorValor() {
-    const readline = require('readline');
-    const teclado = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout
-    })
-
-    let contador: number = 0;
     let maiorNumero: number = 0;
 
-    teclado.question("Quantos numeros voce deseja digitar?: ", (totalNumeros: string) => {
-        let quantidade = parseInt(totalNumeros);
+    const quantidade = parseInt(readline.question("Quantos numeros voce deseja digitar?: "))
 
-        if (contador <= quantidade) {
-
-            teclado.question("Digite um numero: ", (valor: string) => {
-                let numero = parseInt(valor);
-                if (numero > maiorNumero) {
-                    maiorNumero = numero
-                }
-                contador++;
-                teclado.close();
-            })
-            console.log(maiorNumero)
+    for (let i = 0; i < quantidade; i++) {
+        const numero = parseInt(readline.question("Digite um numero: "))
+        if (numero > maiorNumero) {
+            maiorNumero = numero
         }
-
-    })
+    }
+    console.log("O maior número é: ", maiorNumero)
 }
-mostrarMaiorValor();
+
+mostrarMaiorValor()
